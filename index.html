@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrispyLens | Shaping AI & Business</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo2.png" alt="CrispyLens Icon" class="logo-img">
+                CrispyLens
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="#post">Post</a>
+                <a href="#search">🔍Search</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-container">
+
+        <!-- HOME SECTION -->
+        <section id="home" class="page-section active-section">
+            <div class="hero">
+                <h1 class="hero-title">Life, Perspective, AI, <span class="gradient-text">Exploration</span></h1>
+            </div>
+
+            <!-- Search Placeholder -->
+            <div id="search"
+                style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
+                <input type="text" placeholder="Search posts..."
+                    style="width: 100%; padding: 0.8rem; border-radius: 6px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-primary); font-family: inherit;">
+            </div>
+
+            <div id="post" class="post-list">
+                <!-- Instruction Post Item -->
+                <article class="post-item">
+                    <div class="post-meta">Sun 08 March 2026 | <a href="#comments"
+                            style="color: inherit; text-decoration: underline;">Comments</a></div>
+                    <h2 class="post-title"><a href="#">How to Publish a New Post</a></h2>
+                    <p class="post-excerpt">Welcome to your new chronological feed! To publish a new post, simply copy
+                        this `
+                    <article>` block in the `index.html` file and place it at the top of the `.post-list` div. You can
+                        apply categories using the tags container below. Add or remove tags as needed.</p>
+                        <a href="#" class="read-more">read more &rarr;</a>
+                        <div class="tags">
+                            <span class="card-tag">Education</span>
+                            <span class="card-tag">AI</span>
+                            <span class="card-tag">Travel</span>
+                            <span class="card-tag">Life</span>
+                        </div>
+                    </article>
+            </div>
+
+            <!-- Future Post Integration Placeholder -->
+            <div class="placeholder-content"
+                style="margin-top: 4rem; text-align: center; border: 1px dashed var(--border-color); padding: 2rem; border-radius: 8px;">
+                <p style="color: var(--text-secondary);">[ Future YouTube/Podcast automated feed placeholder ]</p>
+            </div>
+
+            <!-- Comments Placeholder -->
+            <div id="comments" class="comments-section">
+                <h3>Comments</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Powered by Giscus / Disqus</p>
+                <div style="background: var(--hover-bg); padding: 2rem; text-align: center; border-radius: 8px;">
+                    <p>Comment thread loading...</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="social-links" style="justify-content: center; margin-bottom: 1.5rem;">
+            <a href="#" class="social-btn">GitHub</a>
+            <a href="#" class="social-btn">LinkedIn</a>
+            <a href="#" class="social-btn disabled" title="Coming Soon">Podcast</a>
+            <a href="#" class="social-btn disabled" title="Coming Soon">YouTube</a>
+        </div>
+        <p>&copy; 2026 CrispyLens. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple navigation script
+        const links = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('.page-section');
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetId = link.getAttribute('href').substring(1);
+
+                // Prevent default if it's an anchor link
+                if (targetId) {
+                    e.preventDefault();
+
+                    // Update active link
+                    links.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+
+                    // Update active section
+                    sections.forEach(sec => {
+                        sec.classList.remove('active-section');
+                        if (sec.id === targetId) {
+                            sec.classList.add('active-section');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
