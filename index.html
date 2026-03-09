@@ -23,7 +23,6 @@
                 <a href="index.html" class="active">Home</a>
                 <a href="about.html">About</a>
                 <a href="#post">Post</a>
-                <a href="#search">🔍Search</a>
             </div>
         </div>
     </nav>
@@ -36,38 +35,34 @@
                 <h1 class="hero-title">Life, Perspective, AI, <span class="gradient-text">Exploration</span></h1>
             </div>
 
-            <!-- Search Placeholder -->
-            <div id="search"
-                style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">
-                <input type="text" placeholder="Search posts..."
-                    style="width: 100%; padding: 0.8rem; border-radius: 6px; border: 1px solid var(--border-color); background: var(--hover-bg); color: var(--text-primary); font-family: inherit;">
-            </div>
+
 
             <div id="post" class="post-list">
-                <!-- Instruction Post Item -->
+                <!-- Post Item: Context Engineering -->
                 <article class="post-item">
-                    <div class="post-meta">Sun 08 March 2026 | <a href="#comments"
+                    <h2 class="post-title" style="margin-bottom: 0.5rem;"><a
+                            href="posts/context-engineering.html">Moving from "Chatting" with AI to
+                            Engineering Context</a></h2>
+                    <div class="post-meta" style="margin-bottom: 1.5rem;">Sun 08 March 2026 | <a
+                            href="posts/context-engineering.html#comments"
                             style="color: inherit; text-decoration: underline;">Comments</a></div>
-                    <h2 class="post-title"><a href="#">How to Publish a New Post</a></h2>
-                    <p class="post-excerpt">Welcome to your new chronological feed! To publish a new post, simply copy
-                        this `
-                    <article>` block in the `index.html` file and place it at the top of the `.post-list` div. You can
-                        apply categories using the tags container below. Add or remove tags as needed.</p>
-                        <a href="#" class="read-more">read more &rarr;</a>
-                        <div class="tags">
-                            <span class="card-tag">Education</span>
-                            <span class="card-tag">AI</span>
-                            <span class="card-tag">Travel</span>
-                            <span class="card-tag">Life</span>
-                        </div>
-                    </article>
+                    <div class="post-excerpt">
+                        <p style="margin-bottom: 1rem;">When was the last time you set up a personal homepage 🏠 ? For
+                            many of us, it was back in college or during that first frantic job hunt after graduation. I
+                            remember my first one—a mess of raw HTML, “borrowed” CSS, and a very limited understanding
+                            of front-end development.</p>
+                        <p style="margin-bottom: 1rem;">I decided it was finally time for an upgrade. This time, I
+                            didn't want to just "prompt" a website into existence. I wanted to see how far I could push
+                            the relationship between human intent and agentic execution...</p>
+                        <a href="posts/context-engineering.html" class="read-more">read more &rarr;</a>
+                    </div>
+                    <div class="tags" style="margin-top: 1.5rem;">
+                        <span class="card-tag">AI</span>
+                        <span class="card-tag">Life</span>
+                    </div>
+                </article>
             </div>
 
-            <!-- Future Post Integration Placeholder -->
-            <div class="placeholder-content"
-                style="margin-top: 4rem; text-align: center; border: 1px dashed var(--border-color); padding: 2rem; border-radius: 8px;">
-                <p style="color: var(--text-secondary);">[ Future YouTube/Podcast automated feed placeholder ]</p>
-            </div>
 
             <!-- Comments Placeholder -->
             <div id="comments" class="comments-section">
@@ -92,34 +87,6 @@
         <p>&copy; 2026 CrispyLens. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Simple navigation script
-        const links = document.querySelectorAll('.nav-links a');
-        const sections = document.querySelectorAll('.page-section');
 
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const targetId = link.getAttribute('href').substring(1);
-
-                // Prevent default if it's an anchor link
-                if (targetId) {
-                    e.preventDefault();
-
-                    // Update active link
-                    links.forEach(l => l.classList.remove('active'));
-                    link.classList.add('active');
-
-                    // Update active section
-                    sections.forEach(sec => {
-                        sec.classList.remove('active-section');
-                        if (sec.id === targetId) {
-                            sec.classList.add('active-section');
-                        }
-                    });
-                }
-            });
-        });
-    </script>
-</body>
 
 </html>
